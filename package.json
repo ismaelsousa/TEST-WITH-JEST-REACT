@@ -17,7 +17,7 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "mytest": "yarn jest with --watchAll",
+    "mytest": "yarn jest with --watchAll=false --coverage",
     "eject": "react-scripts eject"
   },
   "jest": {
@@ -30,6 +30,11 @@
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect",
       "jest-localstorage-mock"
+    ],
+    "coverageDirectory":"__tests__/coverage",
+    "collectCoverageFrom":[
+      "!src/index.js",
+      "!src/services/api.js"
     ]
   },
   "browserslist": {
